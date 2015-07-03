@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 		
 		public float speed = 10f;
 		public float jumpSpeed = 0.1f;
-		//public Transform groundedEnded;
+		public Transform groundedEnded;
 		public bool grounded = false;
 		Animator anim;
 		
@@ -18,8 +18,8 @@ public class Player : MonoBehaviour {
 		void Update ()
 		{
 			
-			//Debug.DrawLine(this.transform.position,groundedEnded.position,Color.green);
-			//grounded = Physics2D.Linecast(this.transform.position, groundedEnded.position, 1<<LayerMask.NameToLayer("Ground"));
+			Debug.DrawLine(this.transform.position,groundedEnded.position,Color.green);
+			grounded = Physics2D.Linecast(this.transform.position, groundedEnded.position, 1<<LayerMask.NameToLayer("Ground"));
 			
 			Vector2 dir = Vector2.zero;	
 			
